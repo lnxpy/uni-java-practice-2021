@@ -3,7 +3,7 @@ import java.util.*;
 public class Student {
     String full_name;
     String major;
-    ArrayList<Course> courses = new ArrayList<Course>();
+    ArrayList<Course> courses = new ArrayList<Course>(); // works, but doesn't make any sense!
 
     Student(String fl_name, String mjr) {
         full_name = fl_name;
