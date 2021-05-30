@@ -3,11 +3,12 @@ import java.util.*;
 public class Student {
     String full_name;
     String major;
-    ArrayList<Course> courses = new ArrayList<Course>(); // works, but doesn't make any sense!
+    ArrayList<Course> courses = new ArrayList<Course>(); // works, better to create the object in the constructor
 
     Student(String fl_name, String mjr) {
         full_name = fl_name;
         major = mjr;
+//      courses = new ArrayList<Course>();
     }
 
     class Course {
