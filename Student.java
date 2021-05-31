@@ -3,12 +3,12 @@ import java.util.*;
 public class Student {
     String full_name;
     String major;
-    ArrayList<Course> courses = new ArrayList<Course>(); // works, better to create the object in the constructor
+    ArrayList<Course> courses;
 
     Student(String fl_name, String mjr) {
         full_name = fl_name;
         major = mjr;
-//      courses = new ArrayList<Course>();
+        courses = new ArrayList<Course>();
     }
 
     class Course {
@@ -21,12 +21,12 @@ public class Student {
         }
     }
 
-    void add_course(String name, double score) {
+    void addCourse(String name, double score) {
         Course c = new Course(name, score);
         courses.add(c);
     }
 
-    double avg_calculate() {
+    double avgCalculate() {
         double sum = 0;
         for (Course course : courses) {
             sum += course.score;
@@ -36,8 +36,9 @@ public class Student {
 
     String information() {
         String template = "Full Name -> %s\n\rCourses -> %s";
-
-        // using foreach for the course conversion instead
-        return String.format(template, full_name, courses.toString());
+        ArrayList<String> crs = new ArrayList<String>();
+	for(Course c : courses)
+            crs.add(c.name);
+	return String.format(template, full_name, crs.toString());
     }
 }

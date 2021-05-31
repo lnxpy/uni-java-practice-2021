@@ -7,14 +7,14 @@ public class NightStudent extends Student {
     }
 
     // setter
-    void set_acounting(double pd_money, double db_money) {
+    void setAccounting(double pd_money, double db_money) {
         paid_money = pd_money;
         debt_money = db_money;
     }
 
     // getter
-    String show_accounting() {
-        String template = "Paid Money -> %d\n\rDebt Money -> %d";
+    String showAccounting() {
+        String template = "Paid Money -> %f\n\rDebt Money -> %f";
         return String.format(template, paid_money, debt_money);
     }
 }
